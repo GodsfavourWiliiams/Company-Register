@@ -1,3 +1,3 @@
-# This is a time stamp register
+# This is a Todo App with Drag and drop
 
 
