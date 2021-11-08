@@ -5,38 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
+    <link rel="icon" type="image/png" sizes="32x32"  href="/todo-app-main/images/favicon-32x32.png">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Todo app</title>
 </head>
 
-<body class="bg-no-repeat bg-cover" style="background-image: url('/todo-app-main/images/bg-desktop-light.jpg');">
-    <div class="" id=" ">
-        <div class="flex justify-between" id=" ">
-            <h1 class=" ">Todo</h1>
-            <img src="/todo-app-main/images/icon-moon.svg " alt=" ">
+<body class="bg-no-repeat bg-cover h-8" style="background-image: url('/todo-app-main/images/bg-desktop-light.jpg');">
+
+    <div class="w-lg m-auto" id="">
+        <div class="flex align-center justify-between my-14" id=" ">
+            <h1 class="font-Josefin Sans text-white tracking-widest uppercase text-5xl font-semibold">Todo</h1>
+            <img src="/todo-app-main/images/moon-solid.svg" alt=" "class="w-10 cursor-pointer">
         </div>
         <div class="search " id=" ">
-            <input type="text " placeholder="Create a new todo... " id=" ">
+            <input type="text " placeholder="Create a new todo... " id="addtodo" class="text-lg text-black font-medium w-full rounded outline-none px-8 py-4" onkeyup="addTodo()">
         </div>
-        <div class=" ">
-            <div class=" ">
-                <p id=" ">5 items left</p>
+        <div class="bg-white mt-8 rounded shadow-2xl">
+        <div class="">
+        <div id="TodoList"></div>
+                 <div class="flex justify-between p-4">
+                     <div class="flex gap-2 ">
+                        <div class="rounded-full w-6 border-4 border-gradient-to-r from-blue-500 to-pink-500"></div>
+                            <p>10 minutes meditation</p>
+                        </div>
+                        <img src="/todo-app-main/images/times-solid.svg" alt=" "class="w-4">
+                 </div>
+              
+        </div>
+        
+          <div class="border-t-2 p-4 flex justify-between justify-between">
+            <div class="">
+                <p class=" font-medium text-gray-400 text-gray-400 hover:text-gray-700"><span id="">5</span> items left</p>
+            </div>
+            <div class="">
+                <a href=" " class="font-medium text-gray-400 mr-4 hover:text-gray-700 active:text-black">All</a>
+                <a href=" " class="font-medium text-gray-400 mr-4 hover:text-gray-700">Active</a>
+                <a href=" "class="font-medium text-gray-400 hover:text-gray-700">Completed</a>
             </div>
             <div class=" ">
-                <a href=" ">All</a>
-                <a href=" ">Active</a>
-                <a href=" ">Completed</a>
-            </div>
-            <div class=" ">
-                <a href=" ">Clear Completed </a>
-            </div>
+                <a href=" " class="font-medium text-gray-400 hover:text-gray-700">Clear Completed </a>
+            </div></div>
         </div>
     </div>
-
-    <footer class="attribution ">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge " target="_blank ">Frontend Mentor</a>. Coded by <a href="# ">Your Name Here</a>.
-    </footer>
 </body>
-
+<script src="script.js"></script>
 </html>
