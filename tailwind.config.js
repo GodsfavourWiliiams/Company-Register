@@ -1,6 +1,7 @@
 module.exports = {
     purge: [],
     darkMode: 'media',
+
     theme: {
         fontFamily: {
             'sans': ['Josefin Sans'],
@@ -20,6 +21,9 @@ module.exports = {
                 'lg': '35rem',
                 'base': '38rem',
                 'xsmax': '40rem',
+            },
+            gridTemplateColumns: {
+                // 'add': 'repeat(2,minmax(1fr, 100px))'
             }
         },
     },

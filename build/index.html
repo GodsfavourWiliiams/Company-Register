@@ -9,49 +9,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.10.2/Sortable.min.js"></script>
     <title>Todo app</title>
 </head>
 
-<body class="bg-no-repeat bg-cover h-8" style="background-image: url('/todo-app-main/images/bg-desktop-light.jpg');">
+<body class="bg-no-repeat dark:bg-gray-900 bg-cover h-8" style="background-image: url('/todo-app-main/images/bg-desktop-light.jpg');">
 
     <div class="w-lg m-auto" id="">
-        <div class="flex align-center justify-between my-14 cursor-pointer" id=" ">
+        <div class="flex align-center justify-between my-16 cursor-pointer" id=" ">
             <h1 class="font-Josefin Sans text-white tracking-widest uppercase text-5xl font-semibold">Todo</h1>
-            <img src="/todo-app-main/images/moon-solid.svg" alt=" " class="w-10 cursor-pointer">
+            <img src="/todo-app-main/images/moon-solid.svg" alt=" " class="w-10 cursor-pointer" onclick="dark()">
+            <!-- <img src="/todo-app-main/images/" alt=""> -->
 
         </div>
-        <div class="flex align-center justify-between gap-2" id=" ">
-            <div class="rounded-full w-6 h-6 border-2 border-gradient-to-r from-blue-500 to-pink-500 absolute mt-4 ml-4"></div>
-            <input type="text " placeholder="Create a new todo... " id="addtodo" class="text-lg text-black border-2 font-medium w-full rounded outline-none px-14 py-4">
-        </div>
-        <div class="bg-white mt-8 rounded shadow-2xl">
-            <div class="listHolder">
-                <ul class="list">
-                    <li class="p-4 flex gap-4 border-b-2">
-                        <div class="rounded-full w-6 border-2 border-gradient-to-r from-blue-500 to-pink-500"></div>
-                        <span class="listName">Macbook</span>
-                    </li>
-                    <li class="p-4 flex gap-4 border-b-2">
-                        <div class="rounded-full w-6 border-2 border-gradient-to-r from-blue-500 to-pink-500"></div>
-                        <span class="listName">Amazon Firestick</span>
-                    </li>
-                    <li class="p-4 flex gap-4 border-b-2">
-                        <div class="rounded-full w-6 border-2 border-gradient-to-r from-blue-500 to-pink-500"></div>
-                        <span class="listName">Keyboard</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="flex justify-between p-4">
-                <div class="flex gap-4 ">
-                    <div class="rounded-full w-6 border-2 border-gradient-to-r from-blue-500 to-pink-500"></div>
-                    <p>10 minutes meditation</p>
-                </div>
-                <img src="/todo-app-main/images/times-solid.svg" alt=" " class="w-4">
+        <form class="flex align-center justify-between gap-2" id=" ">
+            <div class="btn rounded-full w-6 h-6 border-2 border-black absolute mt-4 ml-4"></div>
+            <input type="text " placeholder="Create a new todo... " id="addtodo" autocomplete="off" class="inputVal dark:bg-gray-800  dark:text-white dark:border-gray-800 text-lg text-black border-2 font-medium w-full rounded outline-none px-14 py-4">
+        </form>
+
+        <div class="bg-white dark:bg-gray-800 dark:text-white mt-8 rounded shadow-2xl">
+            <div class="todoLists">
+
             </div>
 
-            <div class="border-t-2 p-4 flex justify-between justify-between">
+            <!-- data are comes from local storage -->
+
+            <div class="p-4 flex justify-between justify-between">
                 <div class="">
-                    <p class=" font-medium text-gray-400 text-gray-400 hover:text-gray-700"><span id="">5</span> items left</p>
+                    <p class=" font-medium text-gray-400 text-gray-400 hover:text-gray-700"><span class="pendingTasks"></span> items left</p>
                 </div>
                 <div class="">
                     <a href=" " class="font-medium text-gray-400 mr-4 hover:text-gray-700 active:text-black">All</a>
@@ -59,12 +44,13 @@
                     <a href=" " class="font-medium text-gray-400 hover:text-gray-700">Completed</a>
                 </div>
                 <div class=" ">
-                    <a href=" " class="font-medium text-gray-400 hover:text-gray-700">Clear Completed </a>
+                    <a href=" " class="font-medium text-gray-400 hover:text-gray-700" onclick="clearTask()">Clear Completed </a>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 <script src="script.js"></script>
 
 </html>
