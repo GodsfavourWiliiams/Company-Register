@@ -9,34 +9,64 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.10.2/Sortable.min.js"></script>
     <title>Todo app</title>
 </head>
 
-<body class="bg-no-repeat dark:bg-gray-900 bg-cover h-8" style="background-image: url('/todo-app-main/images/bg-desktop-light.jpg');">
+<body class="dark:bg-gray-900">
+    <div class="absolute right-4 top-2">
+        <div class="">
+            <input type="search" placeholder="Filter a Todo... " id="searchtextbox" autocomplete="off" class="dark:bg-gray-800 dark:text-white dark:border-gray-800 text-lg text-black border-2 font-medium w-96 rounded outline-none px-4 py-2">
+        </div>
+    </div>
+
+    <div class="background-image">
+        <img src="/todo-app-main/images/bg-desktop-light.jpg" class="absolute top-0 left-0 right-0 z-index-0 w-full ">
+    </div>
+    <style>
+        .background-image img {
+            width: 100%;
+            z-index: -1;
+            object-fit: cover;
+            min-height: 350px;
+            object-position: left;
+        }
+    </style>
 
     <div class="w-lg m-auto" id="">
         <div class="flex align-center justify-between my-16 cursor-pointer" id=" ">
             <h1 class="font-Josefin Sans text-white tracking-widest uppercase text-5xl font-semibold">Todo</h1>
-            <img src="/todo-app-main/images/moon-solid.svg" alt=" " class="w-10 cursor-pointer" onclick="dark()">
-            <!-- <img src="/todo-app-main/images/" alt=""> -->
-
+            <img src="/todo-app-main/images/moon-solid.svg" alt=" " class="w-10 cursor-pointer" onclick="darkMode()">
         </div>
         <form class="flex align-center justify-between gap-2" id=" ">
             <div class="btn rounded-full w-6 h-6 border-2 border-black absolute mt-4 ml-4"></div>
             <input type="text " placeholder="Create a new todo... " id="addtodo" autocomplete="off" class="inputVal dark:bg-gray-800  dark:text-white dark:border-gray-800 text-lg text-black border-2 font-medium w-full rounded outline-none px-14 py-4">
+            <input type="hidden" id="saveindex">
         </form>
-
+        <button type="button" class="" id="addtaskbtn">
+            Add Task
+          </button>
+        <button type="button" class="" id="savetaskbtn" style="display: none;">
+            Save Task
+          </button>
+        <style>
+            .actived {
+                display: block;
+            }
+        </style>
         <div class="bg-white dark:bg-gray-800 dark:text-white mt-8 rounded shadow-2xl">
             <div class="todoLists">
 
             </div>
 
+
             <!-- data are comes from local storage -->
 
             <div class="p-4 flex justify-between justify-between">
                 <div class="">
-                    <p class=" font-medium text-gray-400 text-gray-400 hover:text-gray-700"><span class="pendingTasks"></span> items left</p>
+                    <p class=" font-medium text-gray-400 text-gray-400 "><span class="pendingTasks"></span> items left</p>
                 </div>
                 <div class="">
                     <a href=" " class="font-medium text-gray-400 mr-4 hover:text-gray-700 active:text-black">All</a>
@@ -49,8 +79,8 @@
             </div>
         </div>
     </div>
-</body>
 
-<script src="script.js"></script>
+</body>
+<script src="script.js "></script>
 
 </html>

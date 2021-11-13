@@ -22,9 +22,10 @@ module.exports = {
                 'base': '38rem',
                 'xsmax': '40rem',
             },
-            gridTemplateColumns: {
-                // 'add': 'repeat(2,minmax(1fr, 100px))'
-            }
+            backgroundImage: {
+                'search': "url('/todo-app-main/images/search-solid.svg')",
+                'desktop': "url('/todo-app-main/images/bg-mobile-light.jpg')"
+            },
         },
     },
     variants: {
