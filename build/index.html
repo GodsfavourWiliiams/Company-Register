@@ -15,11 +15,9 @@
     <title>Todo app</title>
 </head>
 
-<body class="dark:bg-gray-900">
-    <div class="absolute right-4 top-2">
-        <div class="">
-            <input type="search" placeholder="Filter a Todo... " id="searchtextbox" autocomplete="off" class="dark:bg-gray-800 dark:text-white dark:border-gray-800 text-lg text-black border-2 font-medium w-96 rounded outline-none px-4 py-2">
-        </div>
+<body class="dark:bg-gray-900 m-4 h-screen overflow-hidden">
+    <div class="absolute right-4 top-4">
+        <input type="search" placeholder="Filter a Todo... " id="searchtextbox" autocomplete="off" onkeyup="filterTodo()" class="dark:bg-gray-800 dark:text-white dark:border-gray-800 text-lg text-black border-2 font-medium w-full rounded outline-none px-4 py-2">
     </div>
 
     <div class="background-image">
@@ -35,46 +33,40 @@
         }
     </style>
 
-    <div class="w-lg m-auto" id="">
-        <div class="flex align-center justify-between my-16 cursor-pointer" id=" ">
+    <div class="w-full max-w-xl m-auto" id="">
+        <div class="flex align-center justify-between mt-28 mb-14 cursor-pointer" id=" ">
             <h1 class="font-Josefin Sans text-white tracking-widest uppercase text-5xl font-semibold">Todo</h1>
             <img src="/todo-app-main/images/moon-solid.svg" alt=" " class="w-10 cursor-pointer" onclick="darkMode()">
         </div>
-        <form class="flex align-center justify-between gap-2" id=" ">
-            <div class="btn rounded-full w-6 h-6 border-2 border-black absolute mt-4 ml-4"></div>
-            <input type="text " placeholder="Create a new todo... " id="addtodo" autocomplete="off" class="inputVal dark:bg-gray-800  dark:text-white dark:border-gray-800 text-lg text-black border-2 font-medium w-full rounded outline-none px-14 py-4">
+        <div class="flex align-center justify-between gap-2" id=" ">
+            <div class="rounded-full w-6 h-6 border-2 border-black absolute mt-4 ml-4"></div>
+            <input type="text" placeholder="Create a new todo... " id="addtodo" autocomplete="off" class="inputVal dark:bg-gray-800 capitalize dark:text-white       dark:border-gray-800 text-lg text-black border-2 font-medium w-full rounded outline-none px-14 py-4">
             <input type="hidden" id="saveindex">
-        </form>
-        <button type="button" class="" id="addtaskbtn">
-            Add Task
-          </button>
-        <button type="button" class="" id="savetaskbtn" style="display: none;">
-            Save Task
-          </button>
+            <img src="/todo-app-main/images/list-ul-solid.svg" id="addtaskbtn" class="btn w-8 p-1 cursor-pointer bg-white dark:bg-gray-800 rounded" alt="">
+            <img src="/todo-app-main/images/calendar-plus-regular.svg" id="savetaskbtn" class="w-8 p-1 cursor-pointer bg-white dark:bg-gray-800 rounded" alt="" style="display: none;">
+        </div>
+
         <style>
             .actived {
                 display: block;
             }
         </style>
         <div class="bg-white dark:bg-gray-800 dark:text-white mt-8 rounded shadow-2xl">
-            <div class="todoLists">
-
+            <div class="todoLists overflow-y-auto">
+                <!-- data are comes from local storage -->
             </div>
 
-
-            <!-- data are comes from local storage -->
-
-            <div class="p-4 flex justify-between justify-between">
+            <div class="p-4 flex justify-between">
                 <div class="">
                     <p class=" font-medium text-gray-400 text-gray-400 "><span class="pendingTasks"></span> items left</p>
                 </div>
-                <div class="">
-                    <a href=" " class="font-medium text-gray-400 mr-4 hover:text-gray-700 active:text-black">All</a>
-                    <a href=" " class="font-medium text-gray-400 mr-4 hover:text-gray-700">Active</a>
+                <div class=" flex gap-4">
+                    <a href=" " class="font-medium text-gray-400  hover:text-gray-700">All</a>
+                    <a href=" " class="font-medium text-gray-400  hover:text-gray-700">Active</a>
                     <a href=" " class="font-medium text-gray-400 hover:text-gray-700">Completed</a>
                 </div>
                 <div class=" ">
-                    <a href=" " class="font-medium text-gray-400 hover:text-gray-700" onclick="clearTask()">Clear Completed </a>
+                    <a href=" " class="font-medium text-gray-400 hover:text-gray-700" onclick="clearTask() ">Clear Completed </a>
                 </div>
             </div>
         </div>
